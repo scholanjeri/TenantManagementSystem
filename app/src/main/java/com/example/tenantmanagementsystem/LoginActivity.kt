@@ -1,4 +1,3 @@
-
 package com.example.tenantmanagementsystem
 
 import android.content.Intent
@@ -43,20 +42,22 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val intent = Intent(this, MainActivity::class.java)
+
+            // Pass the user's email to MainActivity
+            intent.putExtra("EMAIL", email)
+
             startActivity(intent)
             finish()
         }
 
         // Open Register screen
         binding.registerTextView.setOnClickListener {
-
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
         // Open Strathmore website
         binding.helpTextView.setOnClickListener {
-
             val intent = Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://www.strathmore.edu")
